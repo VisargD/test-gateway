@@ -44,7 +44,7 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest
-            type=pep440,pattern={{major}}.{{minor}},value=${{ github.event.release.tag_name }}
+            type=pep440,pattern={{version}},value=${{ github.event.release.tag_name }}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
